@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>数值扩展</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+</head>
+<body>
+    <div class="wrap"></div>
+    <script type="text/javascript">
+        console.log(Number('77'))
+
+        console.log(Number.isNaN(NaN))
+        console.log(Number.isNaN('22'))
+
+        console.log(Number.isFinite(213)) //是否有限
+
+        console.log(Number.parseInt(2.2))
+        console.log(Number.parseFloat(2.22))
+
+        console.log(Number.isInteger(24)) //是否整数
+        console.log(Number.isInteger(24.0))
+        console.log(Number.isInteger(24.1))
+
+
+        // Math.trunc方法用于去除一个数的小数部分，返回整数部分
+        console.log(Math.trunc(2.13))
+        console.log(Math.trunc('2.13'))
+        console.log(Math.trunc('-2.13'))
+        console.log(Math.trunc('2.13aaaa'))
+
+        console.log(Math.ceil('2.2'))
+        console.log(Math.floor(2.2))
+        Math.trunc = Math.trunc || function(x) {
+            return x < 0 ? Math.ceil(x) : Math.floor(x)
+        }
+
+        // Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值
+        console.log(Math.sign(11))    //1
+        console.log(Math.sign(-11))     //-1
+        console.log(Math.sign(0))       //0
+        console.log(Math.sign(-0))      //-0
+        console.log(Math.sign('999'))   //1
+        console.log(Math.sign(true))    //1
+        console.log(Math.sign('aaa'))  //NaN
+
+        Math.sign = Math.sign || function(x) {
+            x = +x // convert to a number
+            if (x === 0 || isNaN(x)) {
+                return x
+            }
+            return x > 0 ? 1 : -1
+        }
+
+        // Math.cbrt方法用于计算一个数的立方根
+        
+        
+    </script>
+</body>
+</html>
