@@ -14,4 +14,16 @@
 # 变量解构赋值
 数组解构
 
+#数字扩展
+Number.isNaN()
+Number.isFinite()
+Number.isInteger()
+Math.trunc()
+Math.sign()
+
+#函数扩展
+默认参数
+rest....
+箭头函数
+
 ```
