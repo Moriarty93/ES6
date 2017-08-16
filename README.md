@@ -26,4 +26,13 @@ Math.sign()
 rest....
 箭头函数
 
+#数组扩展
+扩展运算符
+Array.from()
+Array.of()
+copyWithin()
+find()
+findIndex()
+fill()
+includes()
 ```
