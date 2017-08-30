@@ -6,5 +6,47 @@
 </head>
 <body>
     <div class="wrap"></div>
+    <script type="text/javascript">
+    // 属性的简洁表示法
+        // let foo = 'foo',
+        //     zoo = {foo}
+        // console.log(zoo)
+
+        // let f = (x, y) => {return {x, y}}
+        // console.log(f(1, 2))
+        
+    // 属性名表达式  字符串
+        // es5
+        // var obj = {
+        //     'aa' : 1,
+        //     'bb' : 2,
+        // }
+        // es6
+        // let aa = 'cc',
+        //     obj = {
+        //         [aa]: true,
+        //         ['a' + 'b']: false,
+        //     }
+        // console.log(obj)
+        
+    //Object.is()  用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致
+        // console.log(Object.is(1, '1'))      //false
+        // console.log(Object.is(null, null))      //true
+        // console.log(Object.is(NaN, NaN))        //true
+    
+    // Object.assign()
+    // 用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）
+    // Object.assign方法的第一个参数是目标对象，后面的参数都是源对象
+    // 注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性
+        let a = {a: 1},
+            b = {b: 2},
+            c = {a: 3, c: 3}
+        console.log(Object.assign(a, b, c))
+
+        // 如果只有一个参数，Object.assign会直接返回该参数
+        console.log(Object.assign(c))
+        // 如果该参数不是对象，则会先转成对象，然后返回
+        console.log(typeof Object.assign(2))
+    </script>
 </body>
 </html>
