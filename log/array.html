@@ -80,6 +80,29 @@
         // includes()  
         // Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似
         // console.log([1, NaN, 3].includes(NaN))
+        
+
+
+        {
+            //Array.from
+            
+            const json = {
+                '0' : 'Moriarty',
+                '1' : 'Moriarty1',
+                '2' : 'Moriarty2',
+                length: 3
+            }
+
+            const arr = Array.from(json)
+            console.log(arr)
+        }
+
+        {
+            // Array.of()
+            
+
+            console.log(Array.of('1', '2'))
+        }
     </script>
 </body>
 </html>

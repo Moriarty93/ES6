@@ -101,6 +101,91 @@
 
         // setTimeout(() => console.log('s1: ', timer.s1), 3100)
         // setTimeout(() => console.log('s2: ', timer.s2), 3100)
+        
+
+
+        {
+            // 默认值
+            
+            const fun = (a, b=1) => {
+                if(a === 0) {
+                    throw new Error('Moriarty')
+                }
+                return a + b
+            } 
+
+            const fun1 = (a, b, c) => {
+                console.log(this)
+                return a + b + c
+            }
+
+            // const fun1 = function(a, b, c) {
+            //     console.log(this)
+            //     return a + b + c
+            // }
+            let a = {
+                b: fun1
+            }
+            console.log(fun(1))
+            // console.log(fun(0, 3))
+            console.log(fun.length)
+            console.log(fun1.length)
+            //获取没有默认值的参数
+            console.log(fun1(1, 2, 3))
+            console.log(a.b(1, 2, 3))
+            //箭头函数一直指向顶层
+            //es5 第二次指向对象
+        }
+
+
+        {
+            const obj = {
+                a: 1,
+                b: 2
+            }
+            const fun = ({a, b}) => {
+                console.log(a)
+                console.log(b)
+            }
+            fun(obj)
+        }
+
+        {
+            const obj = {
+                a: 'aa',
+                b: 'bb'
+            }
+            console.log('a' in obj)
+        }
+
+        {
+            const arr = [1,,,,]
+            console.log(arr.length)
+            console.log(0 in arr)
+            console.log(1 in arr)
+            console.log(arr.toString())
+        }
+
+
+        {
+            const obj1 = {
+                name: '1'
+            }
+            const obj2 = {
+                name: '2'
+            }
+            console.log(Object.is(obj1.name, obj2.name))
+        }
+
+        {
+            const a = {
+                a: 'aaa'
+            }
+            const b = {
+                b: 'bbb'
+            }
+            console.log(Object.assign(a, b))
+        }
     </script>
 </body>
 </html>
