@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            {
+                //数组
+                let setArr = new Set(['1', '2', '3', '1', 1])
+                console.log(setArr)
+                console.log([...setArr])
+                console.log([...setArr].length)
+                setArr.add(2)
+                console.log([...setArr])
+                setArr.add('1')
+                console.log([...setArr])
+                setArr.delete('1')
+                console.log([...setArr])
+                // setArr.clear()
+                console.log(setArr.has('2'))
+                console.log(setArr.size)
+                setArr.forEach((val) => console.log(val))
+            }
+
+
+            {
+                // 对象
+                let ws = new WeakSet()
+                const obj = {
+                    a: 'aaa',
+                    b: 'bbbb'
+                }
+                const obj1 = {
+                    a: 'aaa',
+                    b: 'bbbb'
+                }
+                ws.add(obj)
+                ws.add(obj1)
+                console.log(ws)
+
+
+                const obj2 = obj1
+                ws.add(obj2)
+                console.log(ws)
+            }
+        </script>
+    </body>
+</html>

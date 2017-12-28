@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            {
+                class coder {
+                    constructor (x, y) {
+                        this.x = x
+                        this.y = y
+                    }
+                    name (val) {
+                        console.log(val)
+                        return val
+                    }
+
+                    skill (name, val) {
+                        console.log(`${this.name(name)}: Skill - ${val}`)
+                    }
+
+                    toString () {
+                        console.log(`${this.x}  666  ${this.y}`)
+                    }
+                }
+
+                const rr = new coder
+                rr.name('Moriarty')
+                rr.skill('Moriarty', 'web')
+                const rrr = new coder('a', 'b')
+                rrr.toString()
+            }
+
+
+
+            {
+
+            }
+        </script>
+    </body>
+</html>

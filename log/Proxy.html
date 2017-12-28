@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+                //增强对象和函数(方法)  生命周期，预处理
+            {
+                
+
+                let obj = {
+                    add : (val) => val + 100,
+                    name: 'Moriarty'
+                }
+
+                console.log(obj.add(111))
+                console.log(obj.name)
+            }
+
+            {
+                let obj = new Proxy({
+                    add : (val) => val + 100,
+                    name: 'Moriarty'
+                }, {
+                    //get  set apply
+                    
+                    get: (target, key, property) => {
+                        console.log('in get')
+                        console.log(target)
+                        console.log(key)
+                        console.log(property)
+                        return target[key]
+                    },
+
+                    set: (target, propKey, val, receiver) => {
+                        console.log('in set')
+                        console.log(target)
+                        console.log(propKey)
+                        console.log(val)
+                        console.log(receiver)
+                        return target[propKey] = val
+                    }
+                })
+
+                console.log(obj.name)
+                obj.name = 'uuuu'
+                console.log(obj.name)
+            }
+
+
+            {
+                const fun1 = (val) => 'Moriarty'
+
+                const handle = {
+                    apply (target, object, args) {
+                        console.log('in apply')
+                        console.log(target)
+                        console.log(object)
+                        console.log(args)
+                        return Reflect.apply(...arguments)
+                    }
+                }
+                const p = new Proxy(fun1, handle)
+                console.log(p())
+            }
+        </script>
+    </body>
+</html>
